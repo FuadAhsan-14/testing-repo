@@ -1,0 +1,70 @@
+{
+    "gemini_model_flash_2_exp": {
+        "creator_method": "chatGgenai",
+        "params": {"model": "gemini-2.0-flash-001"}
+    },
+    "gemini_model_pro15": {
+        "creator_method": "chatGgenai",
+        "params": {"model": "gemini-1.5-pro-002"}
+    },
+    "gemini_model_pro25": {
+        "creator_method": "chatGgenai",
+        "params": {"model": "gemini-2.5-pro"}
+    },
+    "gemini_model_flash2": {
+        "creator_method": "chatGgenai",
+        "params": {"model": "gemini-2.0-flash"}
+    },
+    "gemini_model_flash25": {
+        "creator_method": "chatGgenai",
+        "params": {"model": "gemini-2.5-flash"}
+    },
+    "gemini_model_flash_lite25": {
+        "creator_method": "chatGgenai",
+        "params": {"model": "gemini-2.5-flash-lite"}
+    },
+    "claude_model_sonnet_35": {
+        "creator_method": "chatBedrock",
+        "params": {"model": "us.anthropic.claude-3-5-sonnet-20240620-v1:0"}
+    },
+    "claude_model_sonnet_37": {
+        "creator_method": "chatBedrock",
+        "params": {"model": "us.anthropic.claude-3-7-sonnet-20250219-v1:0"}
+    },
+    "claude_model_sonnet_4": {
+        "creator_method": "chatBedrock",
+        "params": {"model": "us.anthropic.claude-sonnet-4-20250514-v1:0"}
+    },
+    "claude_model_sonnet_45": {
+        "creator_method": "chatBedrock",
+        "params": {"model": "anthropic.claude-sonnet-4-5-20250929-v1:0"}
+    },
+    "openai_regular": {
+        "creator_method": "chatAzureOpenAi",
+        "default_params": {"model": "gpt-4o-003"}
+    },
+    "openai_mini": {
+        "creator_method": "chatAzureOpenAi",
+        "default_params": {"model": "gpt-4o-mini-002", "deployment": "002"}
+    },
+    "openai_model_gpt_5": {
+        "creator_method": "chatAzureOpenAi",
+        "default_params": {"model": "gpt-5-chat-dev", "deployment": "dev"}
+    },
+    "openai_model_gpt_mini_41": {
+        "creator_method": "chatAzureOpenAi",
+        "params": {"model": "gpt-4.1-mini-003", "deployment": "003"}
+    },
+    "openai_model_gpt_mini_4o": {
+        "creator_method": "chatAzureOpenAi",
+        "default_params": {"model": "gpt-4o-mini-002", "deployment": "002"}
+    },
+    "openai_model_gpt_mini_5": {
+        "creator_method": "chatAzureOpenAi",
+        "default_params": {"model": "gpt-5-mini-dev", "deployment": "dev"}
+    },
+    "openai_model_gpt_chat_5": {
+        "creator_method": "chatAzureOpenAi",
+        "default_params": {"model": "gpt-5-chat-dev", "deployment": "dev"}
+    }
+}

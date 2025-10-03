@@ -1,0 +1,17 @@
+env
+venv
+/typesense-data
+docker-compose.override.yml
+__pycache__
+run
+logs
+local
+.env
+.env.*.local
+/migrations
+embeddings_cache
+notebook.zip
+/notebook
+.vscode
+.pytest_cache
+/sandbox/*

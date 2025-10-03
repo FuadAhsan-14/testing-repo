@@ -1,0 +1,20 @@
+#!/bin/bash
+NAME=app
+DIR=/app
+USER=root
+WORKERS=1
+WORKER_CLASS=uvicorn.workers.UvicornWorker
+VENV=$DIR/env/Scripts/activate
+BIND=0.0.0.0:8081
+LOG_LEVEL=error
+
+cd $DIR
+source $VENV
+exec gunicorn main:app \
+  --name $NAME \
+  --workers $WORKERS \
+  --worker-class $WORKER_CLASS \
+  --user=$USER \
+  --bind=$BIND \
+  --log-level=$LOG_LEVEL \
+  --log-file=-

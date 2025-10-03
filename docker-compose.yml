@@ -1,0 +1,40 @@
+# Version docker compose
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+      args:
+        - DOCKER_PORTS=${DOCKER_PORTS:-8000}
+        - DOCKER_WORKER_COUNT=${DOCKER_WORKER_COUNT:-1}
+    container_name: ${DOCKER_CONTAINER_NAME:-app-container}
+    restart: always
+    ports: 
+      - "${DOCKER_PORTS:-8000}:${DOCKER_PORTS:-8000}"   
+    env_file:
+      - .env
+    networks:
+      - app_network
+
+  # Layanan untuk server Typesense
+  typesense:
+    image: typesense/typesense:28.0
+    container_name: typesense
+    restart: on-failure
+    ports:
+      - "8108:8108"
+    volumes:
+      - ./typesense-data:/data
+    command: '--data-dir /data --api-key=xyz --enable-cors'
+    networks:
+      - app_network
+      
+networks:
+  app_network:
+    name : "app_network"
+    driver : "bridge"
+    external : true
+
+

@@ -1,0 +1,2368 @@
+[
+    {
+        "id": "supplier_kimia_farma_trading_&_dist_v1",
+        "supplier_name": "Kimia Farma Trading&Dist",
+        "supplier_aliases": [
+            "Kimia Farma",
+            "Kimia Farma Trading & Distribution"
+        ],
+        "document_type": "Invoice",
+        "version": "1.0",
+        "fields_to_extract": [
+            "po_number",
+            "invoice_number",
+            "invoice_date"
+        ],
+        "po_number_info": {
+            "label": "Purchase Order Number",
+            "location_keywords": [
+                "PO NO :"
+            ],
+            "hint_text": "Terletak pada bagian atas faktur, di sisi kiri setelah label 'PO NO :'",
+            "rules": [
+                "Hanya terletak pada bagian atas faktur, sisi kiri setelah 'No PO :'",
+                "Terletak pada bawah NPWP",
+                "Terletak pada atas Payment Term"
+            ],
+            "example_value": "NARKOPO-01-2503004"
+        },
+        "invoice_number_info": {
+            "label": "Invoice Number",
+            "location_keywords": [
+                "Invoice No :"
+            ],
+            "hint_text": "Terletak pada bagian atas, sisi kanan dengan label 'Invoice No :'",
+            "rules": [
+                "Hanya terletak pada bagian atas, sisi kanan label 'Invoice No:'",
+                "Terletak pada bawah label 'Salesman'"
+            ],
+            "example_value": "8330815159"
+        },
+        "invoice_date_info": {
+            "label": "Invoice Date",
+            "location_keywords": [
+                "Date :"
+            ],
+            "date_format_hint": "DD.MM.YYYY",
+            "hint_text": "Terletak pada bagian paling atas, sisi kiri dengan label 'Date :'",
+            "rules": [
+                "Hanya terletak pada label 'Date :'",
+                "Bukan pada bagian 'Payment Term :'"
+            ],
+            "example_value": "22.01.2025"
+        }
+    },
+    {
+        "id": "supplier_antarmitra_sembada_v1",
+        "supplier_name": "PT. ANTARMITRA SEMBADA",
+        "supplier_aliases": [
+            "ANTARMITRA SEMBADA",
+            "AMS",
+            "ANTARMITRA",
+            "SEMBADA"
+        ],
+        "document_type": "Invoice",
+        "version": "1.0",
+        "fields_to_extract": [
+            "po_number",
+            "invoice_number",
+            "invoice_date"
+        ],
+        "po_number_info": {
+            "label": "Purchase Order Number",
+            "location_keywords": [
+                "No PO/SP :"
+            ],
+            "hint_text": "Terletak pada bagian atas faktur, di sisi tengah atas pada bagian 'No PO/SP :'",
+            "rules": [
+                "Hanya terletak pada bagian atas, sisi tengah bagian 'No PO/SP :'",
+                "Bukan yang terletak pada label 'Nomor'",
+                "Bukan yang terletak pada label 'Faktur'"
+            ],
+            "example_value": "'PO-01-250101070' atau 'PO.1234' atau 'PO. 1234 simo' atau 'CS 1234 / 123456789-1'"
+        },
+        "invoice_number_info": {
+            "label": "Invoice Number",
+            "location_keywords": [
+                "Nomor :"
+            ],
+            "hint_text": "Terletak pada bagian atas, sisi tengah dengan label 'Nomor :'",
+            "rules": [
+                "Hanya terletak pada bagian atas, sisi tengah label 'Nomor :'",
+                "Bukan yang terletak pada sebelah label 'Faktur'"
+            ],
+            "example_value": "INVTGR250311206"
+        },
+        "invoice_date_info": {
+            "label": "Invoice Date",
+            "location_keywords": [
+                "Tanggal :"
+            ],
+            "date_format_hint": "DD-MM-YYYY",
+            "hint_text": "Terletak pada bagian atas faktur, sisi tengah dengan label 'Tanggal :'",
+            "rules": [
+                "Hanya terletak pada label 'Tanggal :'",
+                "Bukan pada bagian 'Jatuh Tempo :'"
+            ],
+            "example_value": "22-01-2025"
+        }
+    },
+    {
+        "id": "supplier_anugerah_pharmindo_lestari_invoice_v1",
+        "supplier_name": "PT. ANUGERAH PHARMINDO LESTARI",
+        "supplier_aliases": [
+            "ANUGERAH PHARMINDO LESTARI",
+            "PT. APL",
+            "APL",
+            "APL JAKARTA"
+        ],
+        "document_type": "Invoice",
+        "version": "1.0",
+        "fields_to_extract": [
+            "po_number",
+            "invoice_number",
+            "invoice_date"
+        ],
+        "po_number_info": {
+            "label": "Purchase Order Number",
+            "location_keywords": [
+                "No PO / DPF / DPL:"
+            ],
+            "hint_text": "Terletak pada bagian atas faktur, di sisi kiri",
+            "rules": [
+                "Hanya terletak pada bagian setelah 'No PO / DPF / DPL:'",
+                "Bukan yang berada tepat di bawah label 'NO. SPB",
+                "Cari value yang sesuai dengan format example value"
+            ],
+            "example_value": "'PO-01-250101070' atau 'CITO SPO-12345678-12345678-1' atau '250101070' atau '250101070 CITO'"
+        },
+        "invoice_number_info": {
+            "label": "Invoice Number",
+            "location_keywords": [
+                "FAKTUR NO :"
+            ],
+            "hint_text": "Terletak pada bagian atas faktur",
+            "rules": [
+                "Hanya terletak pada bagian setelah 'Nomor :' atau 'Nomor SO:",
+                "Bukan deretan angka yang di bawah barcode"
+            ],
+            "example_value": "1211257411"
+        },
+        "invoice_date_info": {
+            "label": "Invoice Date",
+            "location_keywords": [
+                "TGL FAKTUR :"
+            ],
+            "date_format_hint": "DD.MM.YYYY",
+            "hint_text": "Terletak pada bagian atas faktur, di tengah",
+            "rules": [
+                "Merupakan nilai yang ada pada 'TGL FAKTUR :'",
+                "Bukan pada bagian 'TGL. JATUH TEMPO :'"
+            ],
+            "example_value": "16.01.2025"
+        }
+    },
+    {
+        "id": "supplier_anugrah_argon_medica_invoice_v1",
+        "supplier_name": "PT. ANUGRAH ARGON MEDICA",
+        "supplier_aliases": [
+            "ANUGRAH ARGON MEDICA",
+            "PT. AAM"
+        ],
+        "document_type": "Invoice",
+        "version": "1.0",
+        "fields_to_extract": [
+            "po_number",
+            "invoice_number",
+            "invoice_date"
+        ],
+        "po_number_info": {
+            "label": "Purchase Order Number",
+            "location_keywords": [
+                "No. PO :"
+            ],
+            "hint_text": "Terletak pada bagian atas faktur, di sisi kanan",
+            "rules": [
+                "Hanya terletak pada bagian setelah 'No. PO :'"
+            ],
+            "example_value": "PO-01-250101070"
+        },
+        "invoice_number_info": {
+            "label": "Invoice Number",
+            "location_keywords": [
+                "Nomor : atau Nomor SO:"
+            ],
+            "hint_text": "Terletak pada bagian atas faktur, di tengah",
+            "rules": [
+                "Hanya terletak pada bagian setelah 'Nomor :' atau 'Nomor SO:",
+                "Bukan deretan angka yang di bawah barcode"
+            ],
+            "example_value": "42250004524"
+        },
+        "invoice_date_info": {
+            "label": "Invoice Date",
+            "location_keywords": [
+                "Tgl Cetak :"
+            ],
+            "date_format_hint": "DD-MMM-YY",
+            "hint_text": "Terletak pada bagian atas faktur, di tengah",
+            "rules": [
+                "Merupakan nilai yang ada pada 'Tgl Cetak :'",
+                "Bukan 'Tanggal' saja",
+                "Fokus pada bagian tanggalnya saja, abaikan waktu"
+            ],
+            "example_value": "15-JAN-25"
+        }
+    },
+    {
+        "id": "supplier_distriversa_buana_mas_invoice_v1",
+        "supplier_name": "PT. DISTRIVERSA BUANA MAS",
+        "supplier_aliases": [
+            "DISTRIVERSA BUANA MAS",
+            "DBM"
+        ],
+        "document_type": "Invoice",
+        "version": "1.0",
+        "fields_to_extract": [
+            "po_number",
+            "invoice_number",
+            "invoice_date"
+        ],
+        "po_number_info": {
+            "label": "Purchase Order Number",
+            "location_keywords": [
+                "Note:"
+            ],
+            "hint_text": "Terletak pada bagian tengah faktur, di sisi kiri",
+            "rules": [
+                "Hanya terletak pada bagian setelah 'Note:'",
+                "Bukan yang berada di bawah label 'NO. FPJK"
+            ],
+            "example_value": "PO-01-250101070"
+        },
+        "invoice_number_info": {
+            "label": "Invoice Number",
+            "location_keywords": [
+                "FAKTUR"
+            ],
+            "hint_text": "Terletak pada bagian bawah judul atau label 'FAKTUR'",
+            "rules": [
+                "Hanya terletak pada bagian bawah label 'FAKTUR'",
+                "Bukan deretan angka yang di bawah barcode"
+            ],
+            "example_value": "ADS-SPJ-25000830"
+        },
+        "invoice_date_info": {
+            "label": "Invoice Date",
+            "location_keywords": [
+                "TGL FAKTUR :"
+            ],
+            "date_format_hint": "DD MMM YYYY",
+            "hint_text": "Terletak pada bagian bawah faktur, di tengah",
+            "rules": [
+                "Merupakan nilai yang ada pada keterangan cetak faktur. 'sas02.jkt3 15 Jan 2025 10:00:00' Cetak Ke 1",
+                "Bukan pada bagian 'Tanggal Penagihan'"
+            ],
+            "example_value": "15 Jan 2025"
+        }
+    },
+    {
+        "id": "supplier_dua_farma_mahakarsa_v1",
+        "supplier_name": "PT. DUA FARMA MAHAKARSA",
+        "supplier_aliases": [
+            "DUA FARMA MAHAKARSA",
+            "PT. DUA FARMA",
+            "DFM"
+        ],
+        "document_type": "Invoice",
+        "version": "1.0",
+        "fields_to_extract": [
+            "po_number",
+            "invoice_number",
+            "invoice_date"
+        ],
+        "po_number_info": {
+            "label": "Purchase Order Number",
+            "location_keywords": [
+                "NO PO"
+            ],
+            "hint_text": "Terletak pada bagian atas faktur, di sisi tengah",
+            "rules": [
+                "Hanya terletak pada bagian atas faktur, di sisi tengah",
+                "Bukan yang terletak pada label 'SP/Order'"
+            ],
+            "example_value": "PO-01-250101070 atau 250101070"
+        },
+        "invoice_number_info": {
+            "label": "Invoice Number",
+            "location_keywords": [
+                "Faktur No:"
+            ],
+            "hint_text": "Terletak pada bagian atas, sisi kanan dengan label 'Faktur No :'",
+            "rules": [
+                "Hanya terletak pada bagian atas, sisi kanan faktur dengan label 'Faktur No :'"
+            ],
+            "example_value": "0351.01.01/FKT/RS/VI/25"
+        },
+        "invoice_date_info": {
+            "label": "Invoice Date",
+            "location_keywords": [
+                "Tanggal"
+            ],
+            "date_format_hint": "DD MMMM YYYY",
+            "hint_text": "Terletak pada bagian atas, sisi kanan dengan label atau kolom 'Tanggal'",
+            "rules": [
+                "Hanya terletak pada label 'Tanggal'",
+                "Berdekatan dengan label Invoice Number"
+            ],
+            "example_value": "22 Juni 2025"
+        }
+    },
+    {
+        "id": "supplier_enseval_putra_megatrading_v1",
+        "supplier_name": "PT. ENSEVAL PUTRA MEGATRADING, Tbk.",
+        "supplier_aliases": [
+            "PT. ENSEVAL",
+            "ENSEVAL",
+            "PT. EPM",
+            "EPM"
+        ],
+        "document_type": "Invoice",
+        "version": "1.0",
+        "fields_to_extract": [
+            "po_number",
+            "invoice_number",
+            "invoice_date"
+        ],
+        "po_number_info": {
+            "label": "Purchase Order Number",
+            "location_keywords": [
+                "KET :"
+            ],
+            "hint_text": "Terletak pada bagian paling bawah faktur, di sisi kiri",
+            "rules": [
+                "Hanya terletak pada bagian paling bawah faktur, di sisi kiri setelah 'KET :'",
+                "Bukan yang terletak pada kolom 'K. DOK'",
+                "Bukan yang terletak pada kolom 'NO. DOK'",
+                "Jika tidak terdapat label 'KET : ', maka berikan value null pada PO Number",
+                "Jika terdapat value seperti 'ABC ABCDE 12345 ABC 250101070', maka ambil value yang sesuai dengan format PO Number atau sesuai dengan example value yaitu '250101070'"
+            ],
+            "example_value": "250101070 atau 250101 atau 250101070 CITO atau null"
+        },
+        "invoice_number_info": {
+            "label": "Invoice Number",
+            "location_keywords": [
+                "NO. DOK"
+            ],
+            "hint_text": "Terletak pada bagian atas, sisi kiri faktur dengan label atau kolom 'NO. DOK :'",
+            "rules": [
+                "Hanya terletak pada bagian atas, sisi kiri label atau kolom 'NO. DOK :'",
+                "Bukan yang terletak pada label 'K. DOK'",
+                "Bukan yang terletak pada label 'NO. SO'"
+            ],
+            "example_value": "8330815159"
+        },
+        "invoice_date_info": {
+            "label": "Invoice Date",
+            "location_keywords": [
+                "Tanggal"
+            ],
+            "date_format_hint": "DD-MMM-YYYY",
+            "hint_text": "Terletak pada bagian atas, sisi kiri dengan label atau kolom 'Tanggal'",
+            "rules": [
+                "Hanya terletak pada label atau kolom 'Tanggal'",
+                "Bukan pada bagian label atau kolom 'TGL. J. Tempo'"
+            ],
+            "example_value": "31-JAN-2025"
+        }
+    },
+    {
+        "id": "supplier_kebayoran_pharma_v1",
+        "supplier_name": "PT. KEBAYORAN PHARMA",
+        "supplier_aliases": [
+            "KEBAYORAN PHARMA",
+            "PT. KEBAYORAN",
+            "KEBAYORAN PHARMA"
+        ],
+        "document_type": "Invoice",
+        "version": "1.0",
+        "fields_to_extract": [
+            "po_number",
+            "invoice_number",
+            "invoice_date"
+        ],
+        "po_number_info": {
+            "label": "Purchase Order Number",
+            "location_keywords": [
+                "Keterangan"
+            ],
+            "hint_text": "Terletak pada bagian atas faktur, di sisi kanan",
+            "rules": [
+                "Hanya terletak pada bagian atas faktur, di sisi kanan",
+                "Bukan yang terletak pada label 'SP/Order'"
+            ],
+            "example_value": "PO-01-250101070 atau 250101070"
+        },
+        "invoice_number_info": {
+            "label": "Invoice Number",
+            "location_keywords": [
+                "No. Faktur:"
+            ],
+            "hint_text": "Terletak pada bagian atas, sisi tengah dengan posisi dibawah label 'No. Faktur :'",
+            "rules": [
+                "Hanya terletak pada bagian atas, sisi tengah faktur dengan label atau kolom 'No. Faktur :'",
+                "Bukan yang terletak pada label 'SP/Order'"
+            ],
+            "example_value": "A10125BL7350"
+        },
+        "invoice_date_info": {
+            "label": "Invoice Date",
+            "location_keywords": [
+                "Tanggal"
+            ],
+            "date_format_hint": "DD/MM/YYYY",
+            "hint_text": "Terletak pada bagian atas, sisi tengah dengan label atau kolom 'Tanggal'",
+            "rules": [
+                "Hanya terletak pada bawah label atau kolom 'Tanggal'"
+            ],
+            "example_value": "22/01/2025"
+        }
+    },
+    {
+        "id": "supplier_merapi_utama_pharma_v1",
+        "supplier_name": "PT. MERAPI UTAMA PHARMA",
+        "supplier_aliases": [
+            "MERAPI UTAMA PHARMA",
+            "PT. MERAPI",
+            "Merapi Utama Pharma",
+            "PT. MUP",
+            "MUP"
+        ],
+        "document_type": "Invoice",
+        "version": "1.0",
+        "fields_to_extract": [
+            "po_number",
+            "invoice_number",
+            "invoice_date"
+        ],
+        "po_number_info": {
+            "label": "Purchase Order Number",
+            "location_keywords": [
+                "KET : "
+            ],
+            "hint_text": "Terletak pada bagian paling bawah faktur, di sisi kiri",
+            "rules": [
+                "Hanya terletak pada bagian paling bawah, sisi kiri pada label 'KET : '",
+                "Bukan yang terletak pada kolom 'NOMOR",
+                "Bukan yang terletak pada kolom 'SURAT PESANAN'"
+            ],
+            "example_value": "Terdapat beberapa contoh value yang benar pada PO Number, seperti : PO-01-250101070 atau 'KET : PO-01-250101070' atau '250101070' atau '2373' atau '950' atau '2050 CITOO' atau 'SPO-12345678-12345678-1'"
+        },
+        "invoice_number_info": {
+            "label": "Invoice Number",
+            "location_keywords": [
+                "Copy FAKTUR atau FAKTUR"
+            ],
+            "hint_text": "Terletak pada bagian paling atas, sisi kanan dengan label FAKTUR",
+            "rules": [
+                "Hanya terletak pada bagian paling atas, sisi kanan dengan label FAKTUR",
+                "Bukan yang terletak pada kolom 'NOMOR",
+                "Bukan yang terletak pada kolom 'SURAT PESANAN'",
+                "Bukan yang terletak pada kolom 'SURAT JALAN'"
+            ],
+            "example_value": "34-289635"
+        },
+        "invoice_date_info": {
+            "label": "Invoice Date",
+            "location_keywords": [
+                "TANGGAL"
+            ],
+            "date_format_hint": "DD-MMM-YYYY",
+            "hint_text": "Terletak pada bagian tengah, sisi kiri pada kolom TANGGAL",
+            "rules": [
+                "Hanya terletak pada bagian atas, sisi kiri pada kolom TANGGAL",
+                "Bukan pada bagian kolom 'Jatuh Tempo :'"
+            ],
+            "example_value": "22--Mar-2025"
+        }
+    },
+    {
+        "id": "supplier_millenium_pharmacon_international_v1",
+        "supplier_name": "PT. MILLENIUM PHARMACON INTERNATIONAL, Tbk.",
+        "supplier_aliases": [
+            "MILLENIUM PHARMACON INTERNATIONAL, Tbk.",
+            "PT. MILLENIUM",
+            "Millenium Pharmacon International",
+            "PT. MPI",
+            "MPI"
+        ],
+        "document_type": "Invoice",
+        "version": "1.0",
+        "fields_to_extract": [
+            "po_number",
+            "invoice_number",
+            "invoice_date"
+        ],
+        "po_number_info": {
+            "label": "Purchase Order Number",
+            "location_keywords": [
+                "Tanpa label"
+            ],
+            "hint_text": "Terletak pada bagian paling bawah faktur, di sisi kiri",
+            "rules": [
+                "Hanya terletak pada bagian paling bawah faktur, di sisi kiri",
+                "Bukan yang terletak pada label 'Order No'",
+                "Bukan yang terletak pada label 'No. Ref'"
+            ],
+            "example_value": "'PO-01-250101070' atau 'po-01-25010'"
+        },
+        "invoice_number_info": {
+            "label": "Invoice Number",
+            "location_keywords": [
+                "No. Faktur:"
+            ],
+            "hint_text": "Terletak pada bagian atas, sisi tengah dengan label 'No. Faktur :'",
+            "rules": [
+                "Hanya terletak pada bagian atas, sisi kanan label 'No. Faktur :'",
+                "Bukan yang terletak pada label 'No. Ref'",
+                "Bukan yang terletak pada label 'Order No'"
+            ],
+            "example_value": "130125017350"
+        },
+        "invoice_date_info": {
+            "label": "Invoice Date",
+            "location_keywords": [
+                "Tgl."
+            ],
+            "date_format_hint": "DD/MM/YYYY",
+            "hint_text": "Terletak pada bagian atas, sisi kanan dengan label 'Tgl.'",
+            "rules": [
+                "Hanya terletak pada samping label 'Tgl.'",
+                "Jika kamu melihat terdapat beberapa tanggal atau invoice date, maka ambil yang memiliki data atau value tanggal paling lampau",
+                "Contoh kamu melihat 2 tanggal, 28/05/25 dan 18/06/25. maka untuk value invoice date kamu harus memilih yang 28/05/25 karena merupakan tanggal yang lebih lampau"
+            ],
+            "example_value": "22/01/2025"
+        }
+    },
+    {
+        "id": "supplier_parit_gadang_global_v1",
+        "supplier_name": "PT. PARIT GADANG GLOBAL",
+        "supplier_aliases": [
+            "PARIT GADANG GLOBAL",
+            "PGG"
+        ],
+        "document_type": "Invoice",
+        "version": "1.0",
+        "fields_to_extract": [
+            "po_number",
+            "invoice_number",
+            "invoice_date"
+        ],
+        "po_number_info": {
+            "label": "Purchase Order Number",
+            "location_keywords": [
+                "No PO :"
+            ],
+            "hint_text": "Terletak pada bagian atas faktur, di sisi kanan",
+            "rules": [
+                "Hanya terletak pada bagian atas, sisi kanan setelah 'No PO :'",
+                "Bukan yang terletak pada label 'No Order'",
+                "Bukan yang terletak pada label 'Salesman'"
+            ],
+            "example_value": "PO-01-250101070"
+        },
+        "invoice_number_info": {
+            "label": "Invoice Number",
+            "location_keywords": [
+                "No Invoice :"
+            ],
+            "hint_text": "Terletak pada bagian atas, sisi kanan dengan label 'No Invoice :'",
+            "rules": [
+                "Hanya terletak pada bagian atas, sisi kanan label 'No Invoice :'",
+                "Bukan yang terletak pada label 'No Order'",
+                "Bukan yang terletak pada label 'Salesman'"
+            ],
+            "example_value": "8330815159"
+        },
+        "invoice_date_info": {
+            "label": "Invoice Date",
+            "location_keywords": [
+                "Tanggal :"
+            ],
+            "date_format_hint": "DD.MM.YYYY",
+            "hint_text": "Terletak pada bagian atas, sisi kanan dengan label 'Tanggal :'",
+            "rules": [
+                "Hanya terletak pada label 'Tanggal :'",
+                "Bukan pada bagian 'Jatuh Tempo :'"
+            ],
+            "example_value": "22.01.2025"
+        }
+    },
+    {
+        "id": "supplier_tempo_v1",
+        "supplier_name": "PT. TEMPO",
+        "supplier_aliases": [
+            "TEMPO"
+        ],
+        "document_type": "Invoice",
+        "version": "1.0",
+        "fields_to_extract": [
+            "po_number",
+            "invoice_number",
+            "invoice_date"
+        ],
+        "po_number_info": {
+            "label": "Purchase Order Number",
+            "location_keywords": [
+                "NOMOR PO/SP:"
+            ],
+            "hint_text": "Terletak pada bagian tengah faktur, di sisi kiri",
+            "rules": [
+                "Hanya terletak pada bagian tengah, sisi kiri pada kolom 'NOMOR PO/SP :'",
+                "Bukan yang terletak pada kolom 'NOMOR SO'"
+            ],
+            "example_value": "PO-01-250101070 atau 01-250101070 atau 250101070"
+        },
+        "invoice_number_info": {
+            "label": "Invoice Number",
+            "location_keywords": [
+                "Samping kanan bar code"
+            ],
+            "hint_text": "Terletak pada bagian paling atas, sisi kanan tanpa label, berada pada samping kanan bar code, dan diatas invoice date",
+            "rules": [
+                "Hanya terletak pada bagian paling atas, sisi kanan tanpa label, berada pada samping kanan bar code, dan diatas invoice date",
+                "Bukan yang terletak pada label 'NOMOR SO'",
+                "Bukan yang terletak pada label 'KODE PELANGGAN'"
+            ],
+            "example_value": "1932972724"
+        },
+        "invoice_date_info": {
+            "label": "Invoice Date",
+            "location_keywords": [
+                "Bawah Invoice Number"
+            ],
+            "date_format_hint": "DD.MM.YYYY",
+            "hint_text": "Terletak pada bagian atas, sisi kanan dengan tanpa label, berada di bawah Invoice Number, dan berada di samping kanan bar code",
+            "rules": [
+                "Hanya terletak pada bagian atas, sisi kanan tanpa label, berada di bawah Invoice Number, dan berada di samping kanan bar code",
+                "Bukan pada bagian kolom 'Jatuh Tempo :'"
+            ],
+            "example_value": "22.01.2025"
+        }
+    },
+    {
+        "id": "supplier_nelta_multi_gracia_v1",
+        "supplier_name": "PT. NELTA MULTI GRACIA",
+        "supplier_aliases": [
+            "NELTA MULTI GRACIA",
+            "PT. NELTA",
+            "NMG"
+        ],
+        "document_type": "Invoice",
+        "version": "1.0",
+        "fields_to_extract": [
+            "po_number",
+            "invoice_number",
+            "invoice_date"
+        ],
+        "po_number_info": {
+            "label": "Purchase Order Number",
+            "location_keywords": [
+                "No. Pesanan Pelanggan:"
+            ],
+            "hint_text": "Terletak pada bagian tengah faktur, di sisi kiri",
+            "rules": [
+                "Hanya terletak pada bagian tengah, sisi kiri pada kolom 'No. Pesanan Pelanggan :'",
+                "Bukan yang terletak pada kolom atau label 'No'",
+                "Bukan yang terletak pada kolom atau label 'No. Faktur'"
+            ],
+            "example_value": "PO-01-250101070 atau 01-250101070 atau 250101070"
+        },
+        "invoice_number_info": {
+            "label": "Invoice Number",
+            "location_keywords": [
+                "No. Faktur:"
+            ],
+            "hint_text": "Terletak pada bagian tengah faktur, sisi kanan dengan label 'No. Faktur:'",
+            "rules": [
+                "Hanya terletak pada bagian paling tengah, sisi kanan dengan label atau kolom'No. Faktur:'",
+                "Bukan yang terletak pada label 'No'",
+                "Bukan yang terletak pada label 'No. Pesanan Pelanggan'"
+            ],
+            "example_value": "1234/ABC/SLS/05/25"
+        },
+        "invoice_date_info": {
+            "label": "Invoice Date",
+            "location_keywords": [
+                "Tanggal Faktur :"
+            ],
+            "date_format_hint": "DD MMM YYYY",
+            "hint_text": "Terletak pada bagian tengah sedikit ke atas, sisi kanan dengan label 'Tanggal Faktur : ',",
+            "rules": [
+                "Hanya terletak pada bagian tengah sedikit keatas dengan label 'Tanggal Faktur : '",
+                "Bukan pada bagian kolom atau label 'Tanggal :'"
+            ],
+            "example_value": "22 Jan 2025"
+        }
+    },
+    {
+        "id": "supplier_saba_indomedika_v1",
+        "supplier_name": "PT. SABA INDOMEDIKA",
+        "supplier_aliases": [
+            "SABA INDOMEDIKA",
+            "PT. SABA",
+            "INDOMEDIKA"
+        ],
+        "document_type": "Invoice",
+        "version": "1.0",
+        "fields_to_extract": [
+            "po_number",
+            "invoice_number",
+            "invoice_date"
+        ],
+        "po_number_info": {
+            "label": "Purchase Order Number",
+            "location_keywords": [
+                "'Customer PO : ' atau 'No. PO Cust :'"
+            ],
+            "hint_text": "Terletak pada bagian tengah faktur, di sisi kiri",
+            "rules": [
+                "Hanya terletak pada bagian tengah, sisi kiri atau kanan pada faktur pada kolom atau label 'Customer PO : '",
+                "Bukan yang terletak pada kolom atau label 'Sales Order'",
+                "Bukan yang terletak pada kolom atau label 'No. Faktur'"
+            ],
+            "example_value": "'PO-01-250101070 | PO-01-250101070-1' atau '01-250101070' atau '250101070'"
+        },
+        "invoice_number_info": {
+            "label": "Invoice Number",
+            "location_keywords": [
+                "'DO No:' atau jika tidak ditemukan, cari yang berlabel 'No'"
+            ],
+            "hint_text": "Terletak pada bagian tengah faktur, dengan label 'DO No'",
+            "rules": [
+                "Hanya terletak pada bagian tengah faktur, berada pada label 'DO No'",
+                "Bukan yang terletak pada label 'Invoice No'",
+                "Bukan yang terletak pada label 'Sales Order'"
+            ],
+            "example_value": "DO123456789"
+        },
+        "invoice_date_info": {
+            "label": "Invoice Date",
+            "location_keywords": [
+                "Tempat/Tanggal :"
+            ],
+            "date_format_hint": "DD MMM YYYY",
+            "hint_text": "Terletak pada bagian paling atas faktur, sisi kanan dengan label 'Tempat/Tanggal : ',",
+            "rules": [
+                "Hanya terletak pada bagian paling atas faktur dengan label 'Tempat/Tanggal : '",
+                "Bukan pada bagian kolom atau label 'Due Date :'"
+            ],
+            "example_value": "22 Jan 2025"
+        }
+    },
+    {
+        "id": "supplier_bina_san_prima_v1",
+        "supplier_name": "PT. BINA SAN PRIMA",
+        "supplier_aliases": [
+            "BINA SAN PRIMA",
+            "PT. BINA",
+            "BSP"
+        ],
+        "document_type": "Invoice",
+        "version": "1.0",
+        "fields_to_extract": [
+            "po_number",
+            "invoice_number",
+            "invoice_date"
+        ],
+        "po_number_info": {
+            "label": "Purchase Order Number",
+            "location_keywords": [
+                "No SP :"
+            ],
+            "hint_text": "Terletak pada bagian tengah faktur, di sisi atas",
+            "rules": [
+                "Hanya terletak pada bagian tengah, sisi atas faktur pada kolom atau label 'No SP :'",
+                "Bukan yang terletak pada kolom atau label 'No DO'",
+                "Bukan yang terletak pada kolom atau label 'No. Faktur'"
+            ],
+            "example_value": "'PO-01-250101070' atau '01-250101070' atau '250101070' atau 'SPO-A1234A123-123456-1''"
+        },
+        "invoice_number_info": {
+            "label": "Invoice Number",
+            "location_keywords": [
+                "NO:"
+            ],
+            "hint_text": "Terletak pada bagian paling atas faktur, dan di sisi paling kanan dengan label 'NO:'",
+            "rules": [
+                "Hanya terletak pada bagian paling atas faktur, dan ada di sisi paling kanan dengan label 'NO:'",
+                "Bukan yang terletak pada label 'No Faktur'",
+                "Bukan yang terletak pada label 'No DO'"
+            ],
+            "example_value": "0123456"
+        },
+        "invoice_date_info": {
+            "label": "Invoice Date",
+            "location_keywords": [
+                "Tanggal :"
+            ],
+            "date_format_hint": "DD-MM-YYYY",
+            "hint_text": "Terletak pada bagian atas faktur, sisi tengah dengan label 'Tanggal : ',",
+            "rules": [
+                "Hanya terletak pada bagian atas faktur, di sisi tengah dengan label 'Tanggal : '",
+                "Bukan pada bagian kolom atau label 'Jth Tempo :'"
+            ],
+            "example_value": "22-01-2025"
+        }
+    },
+    {
+        "id": "supplier_united_dico_citas_v1",
+        "supplier_name": "PT. UNITED DICO CITAS",
+        "supplier_aliases": [
+            "UNITED DICO CITAS",
+            "PT. UNITED",
+            "UDC"
+        ],
+        "document_type": "Invoice",
+        "version": "1.0",
+        "fields_to_extract": [
+            "po_number",
+            "invoice_number",
+            "invoice_date"
+        ],
+        "po_number_info": {
+            "label": "Purchase Order Number",
+            "location_keywords": [
+                "SP"
+            ],
+            "hint_text": "Terletak pada bagian tengah faktur, di sisi kiri",
+            "rules": [
+                "Hanya terletak pada bagian tengah, sisi kiri faktur pada kolom atau label 'SP'",
+                "Bukan yang terletak pada kolom atau label 'No Faktur'"
+            ],
+            "example_value": "'PO-01-250101070' atau '01-250101070' atau '250101070' atau 'SPO-A123B456' atau '250101070 cito'"
+        },
+        "invoice_number_info": {
+            "label": "Invoice Number",
+            "location_keywords": [
+                "No Faktur:"
+            ],
+            "hint_text": "Terletak pada bagian atas faktur, dan di sisi tengah dengan label 'No Faktur:'",
+            "rules": [
+                "Hanya terletak pada bagian atas faktur, dan ada di sisi tengah dengan label 'No Faktur:'",
+                "Bukan yang terletak pada label 'No. Langganan'"
+            ],
+            "example_value": "0123456"
+        },
+        "invoice_date_info": {
+            "label": "Invoice Date",
+            "location_keywords": [
+                "Tanggal"
+            ],
+            "date_format_hint": "DD/MM/YYYY",
+            "hint_text": "Terletak pada bagian atas faktur, sisi paling kanan dengan label 'Tanggal',",
+            "rules": [
+                "Hanya terletak pada bagian atas faktur, di sisi paling kanan dengan label 'Tanggal'",
+                "Bukan pada bagian kolom atau label 'Tgl. Order'",
+                "Bukan pada bagian kolom atau label 'J. Tempo'"
+            ],
+            "example_value": "22/01/2025"
+        }
+    },
+    {
+        "id": "supplier_intisumber_hasil_sempurna_global_v1",
+        "supplier_name": "PT. INTISUMBER HASIL SEMPURNA GLOBAL",
+        "supplier_aliases": [
+            "INTISUMBER HASIL SEMPURNA GLOBAL",
+            "PT. INTISUMBER",
+            "ISHS"
+        ],
+        "document_type": "Invoice",
+        "version": "1.0",
+        "fields_to_extract": [
+            "po_number",
+            "invoice_number",
+            "invoice_date"
+        ],
+        "po_number_info": {
+            "label": "Purchase Order Number",
+            "location_keywords": [
+                "Tanpa Label"
+            ],
+            "hint_text": "Terletak pada bagian bawah faktur, di sisi kiri",
+            "rules": [
+                "Hanya terletak pada bagian tengah, sisi kiri faktur tanpa label",
+                "Berada tepat di bawah penyebutan jumlah uang atau terbilang uang",
+                "PO Number hanya berupa deretan angka"
+            ],
+            "example_value": "'PO-01-250101070' atau '01-250101070' atau '250101070'"
+        },
+        "invoice_number_info": {
+            "label": "Invoice Number",
+            "location_keywords": [
+                "Faktur Penjualan:"
+            ],
+            "hint_text": "Terletak pada bagian atas faktur, dan di sisi tengah dengan label 'Faktur Penjualan:'",
+            "rules": [
+                "Hanya terletak pada bagian atas faktur, dan ada di sisi tengah dengan label 'Faktur Penjualan:'",
+                "Bukan yang terletak pada bawah PO Number"
+            ],
+            "example_value": "ABCD12345678"
+        },
+        "invoice_date_info": {
+            "label": "Invoice Date",
+            "location_keywords": [
+                "Doc Date"
+            ],
+            "date_format_hint": "DD-MM-YYYY",
+            "hint_text": "Terletak pada bagian atas faktur, sisi paling kanan dengan label 'Doc Date',",
+            "rules": [
+                "Hanya terletak pada bagian atas faktur, di sisi paling kanan dengan label 'Doc Date'",
+                "Bukan pada bagian kolom atau label 'Due Date'"
+            ],
+            "example_value": "22-01-2025"
+        }
+    },
+    {
+        "id": "supplier_indoprima_bionet_v1",
+        "supplier_name": "PT. INDOPRIMA BIONET",
+        "supplier_aliases": [
+            "INDOPRIMA BIONET",
+            "PT. INDOPRIMA",
+            "IB"
+        ],
+        "document_type": "Invoice",
+        "version": "1.0",
+        "fields_to_extract": [
+            "po_number",
+            "invoice_number",
+            "invoice_date"
+        ],
+        "po_number_info": {
+            "label": "Purchase Order Number",
+            "location_keywords": [
+                "Nomor Pesanan"
+            ],
+            "hint_text": "Terletak pada bagian tengah faktur, di sisi kanan",
+            "rules": [
+                "Hanya terletak pada bagian tengah, sisi kanan faktur berada di bawah label 'Nomor Pesanan'"
+            ],
+            "example_value": "'PO-01-250101070' atau 'PO-01-250101070-1' atau '01-250101070' atau '250101070'"
+        },
+        "invoice_number_info": {
+            "label": "Invoice Number",
+            "location_keywords": [
+                "TANDA TERIMA"
+            ],
+            "hint_text": "Terletak pada bagian atas faktur, dan di sisi tengah dengan label 'TANDA TERIMA'",
+            "rules": [
+                "Hanya terletak pada bagian atas faktur, dan ada di sisi tengah dengan label 'TANDA TERIMA'"
+            ],
+            "example_value": "1234/TTB/IB/2025"
+        },
+        "invoice_date_info": {
+            "label": "Invoice Date",
+            "location_keywords": [
+                "Tanpa Label"
+            ],
+            "date_format_hint": "YY MMM DD",
+            "hint_text": "Terletak pada bagian tengah faktur, sisi paling kanan dengan label 'Doc Date' dibawah PO Number",
+            "rules": [
+                "Hanya terletak pada bagian tengah faktur, di sisi paling kanan dengan label 'Doc Date' di bawah PO Number",
+                "Bukan yang terletak pada tanggal terima dengan tanda tangan"
+            ],
+            "example_value": "25 JAN 01"
+        }
+    },
+    {
+        "id": "supplier_inti_makmur_meditama_v1",
+        "supplier_name": "PT. INTI MAKMUR MEDITAMA",
+        "supplier_aliases": [
+            "INTI MAKMUR MEDITAMA",
+            "PT. INTIMAKMUR",
+            "IMM"
+        ],
+        "document_type": "Invoice",
+        "version": "1.0",
+        "fields_to_extract": [
+            "po_number",
+            "invoice_number",
+            "invoice_date"
+        ],
+        "po_number_info": {
+            "label": "Purchase Order Number",
+            "location_keywords": [
+                "No. PO"
+            ],
+            "hint_text": "Terletak pada bagian atas faktur, di sisi kanan",
+            "rules": [
+                "Hanya terletak pada bagian atas, sisi kanan faktur berada pada label 'No. PO'"
+            ],
+            "example_value": "'PO-01-250101070' atau 'PO-01-250101070-1' atau '01-250101070' atau '250101070'"
+        },
+        "invoice_number_info": {
+            "label": "Invoice Number",
+            "location_keywords": [
+                "No. Invoice"
+            ],
+            "hint_text": "Terletak pada bagian atas faktur, dan di sisi kanan dengan label 'No. Invoice'",
+            "rules": [
+                "Hanya terletak pada bagian atas faktur, dan ada di sisi kanan dengan label 'No. Invoice'"
+            ],
+            "example_value": "ABC 123456"
+        },
+        "invoice_date_info": {
+            "label": "Invoice Date",
+            "location_keywords": [
+                "Tanggal"
+            ],
+            "date_format_hint": "DD MMM YYYY",
+            "hint_text": "Terletak pada bagian atas faktur, sisi tengah dengan label 'Tanggal'",
+            "rules": [
+                "Hanya terletak pada bagian atas faktur, di sisi tengah dengan label 'Tanggal'",
+                "Bukan yang terletak pada label 'Jatuh Tempo'"
+            ],
+            "example_value": "22 Jan 2025"
+        }
+    },
+    {
+        "id": "supplier_mensa_binasukses_v1",
+        "supplier_name": "PT. MENSA BINASUKSES",
+        "supplier_aliases": [
+            "MENSA BINASUKSES",
+            "PT. MENSA",
+            "MBS"
+        ],
+        "document_type": "Invoice",
+        "version": "1.0",
+        "fields_to_extract": [
+            "po_number",
+            "invoice_number",
+            "invoice_date"
+        ],
+        "po_number_info": {
+            "label": "Purchase Order Number",
+            "location_keywords": [
+                "Tanpa Label"
+            ],
+            "hint_text": "Terletak pada bagian tengah faktur, di sisi kiri",
+            "rules": [
+                "Hanya terletak pada bagian tengah faktur, di sisi kiri berada pada atas tabel list barang",
+                "Jika terdapat 'XS' pada PO Number, maka PO Number adalah 'PO Number' nya saja, tanpa 'XS'"
+            ],
+            "example_value": "'PO-01-250101070' atau 'PO-01-250101070-1' atau 'PO-01-250101070 CITO' atau '01-250101070' atau '250101070'"
+        },
+        "invoice_number_info": {
+            "label": "Invoice Number",
+            "location_keywords": [
+                "Faktur No."
+            ],
+            "hint_text": "Terletak pada bagian atas faktur, dan di sisi kanan dengan label 'Faktur No.'",
+            "rules": [
+                "Hanya terletak pada bagian atas faktur, dan ada di sisi kanan dengan label 'Faktur No.'",
+                "Bukan yang terletak pada kolom atau label 'DN No.'"
+            ],
+            "example_value": "AB123456789"
+        },
+        "invoice_date_info": {
+            "label": "Invoice Date",
+            "location_keywords": [
+                "TANGGAL"
+            ],
+            "date_format_hint": "DD-MMM-YYYY",
+            "hint_text": "Terletak pada bagian atas faktur, sisi kanan dengan label 'TANGGAL'",
+            "rules": [
+                "Hanya terletak pada bagian atas faktur, di sisi kanan dengan label 'TANGGAL'",
+                "Terletak pada bawah Invoice Number",
+                "Bukan yang terletak pada label atau kolom 'Jatuh Tempo'"
+            ],
+            "example_value": "22-Jan-2025"
+        }
+    },
+    {
+        "id": "supplier_penta_valent_tbk_v1",
+        "supplier_name": "PT. PENTA VALENT TBK",
+        "supplier_aliases": [
+            "PENTA VALENT TBK",
+            "PT. PENTA",
+            "PVT"
+        ],
+        "document_type": "Invoice",
+        "version": "1.0",
+        "fields_to_extract": [
+            "po_number",
+            "invoice_number",
+            "invoice_date"
+        ],
+        "po_number_info": {
+            "label": "Purchase Order Number",
+            "location_keywords": [
+                "NO dan PO Pelanggan :"
+            ],
+            "hint_text": "Terletak pada bagian bawah faktur, di sisi tengah",
+            "rules": [
+                "Hanya terletak pada bagian bawah faktur, di sisi tengah pada label 'NO dan PO Pelanggan :'",
+                "Bukan yang terletak pada label 'No DPL atau PDF'"
+            ],
+            "example_value": "'PO-01-250101070' atau 'PO-01-250101070-1' atau '01-250101070' atau '250101070' atau '250101070-1'"
+        },
+        "invoice_number_info": {
+            "label": "Invoice Number",
+            "location_keywords": [
+                "Faktur No."
+            ],
+            "hint_text": "Terletak pada bagian paling atas faktur, dan di sisi kiri dengan label 'Faktur No.'",
+            "rules": [
+                "Hanya terletak pada bagian paling atas faktur, dan ada di sisi kiri dengan label 'Faktur No.'",
+                "Bukan yang terletak pada kolom atau label 'SO :'",
+                "Bukan yang terletak pada kolom atau label 'DO :'"
+            ],
+            "example_value": "AB123456789"
+        },
+        "invoice_date_info": {
+            "label": "Invoice Date",
+            "location_keywords": [
+                "Tgl Faktur"
+            ],
+            "date_format_hint": "DD-MMM-YYYY",
+            "hint_text": "Terletak pada bagian atas faktur, sisi tengah dengan label 'Tgl Faktur'",
+            "rules": [
+                "Hanya terletak pada bagian atas faktur, di sisi tengah dengan label 'Tgl Faktur'",
+                "Bukan yang terletak pada label atau kolom 'Tgl Jatuh Tempo'"
+            ],
+            "example_value": "22-Jan-2025"
+        }
+    },
+    {
+        "id": "supplier_kallista_prima_v1",
+        "supplier_name": "PT. KALLISTA PRIMA",
+        "supplier_aliases": [
+            "KALLISTA PRIMA",
+            "PT. KALLISTA",
+            "KP"
+        ],
+        "document_type": "Invoice",
+        "version": "1.0",
+        "fields_to_extract": [
+            "po_number",
+            "invoice_number",
+            "invoice_date"
+        ],
+        "po_number_info": {
+            "label": "Purchase Order Number",
+            "location_keywords": [
+                "Tidak ada PO Number"
+            ],
+            "hint_text": "Tidak ada PO Number pada faktur ini, tidak perlu dicari",
+            "rules": [
+                "Tidak ada PO Number pada faktur ini, tidak perlu dicari, isikan null pada PO Number"
+            ],
+            "example_value": "null"
+        },
+        "invoice_number_info": {
+            "label": "Invoice Number",
+            "location_keywords": [
+                "Nomor Dok"
+            ],
+            "hint_text": "Terletak pada bagian atas faktur, dan di sisi kiri dengan label 'Nomor Dok'",
+            "rules": [
+                "Hanya terletak pada bagian atas faktur, dan ada di sisi kiri dengan label 'Nomor Dok'",
+                "Bukan yang terletak pada kolom atau label 'No. Ord / Sales"
+            ],
+            "example_value": "12345 / ABC"
+        },
+        "invoice_date_info": {
+            "label": "Invoice Date",
+            "location_keywords": [
+                "Tanggal Dok"
+            ],
+            "date_format_hint": "DD/MM/YY",
+            "hint_text": "Terletak pada bagian atas faktur, sisi kiri dengan label 'Tanggal Dok'",
+            "rules": [
+                "Hanya terletak pada bagian atas faktur, di sisi kiri dengan label 'Tanggal Dok'",
+                "Berada dibawah Invoice Number"
+            ],
+            "example_value": "22/01/25"
+        }
+    },
+    {
+        "id": "supplier_sapta_sari_tama_v1",
+        "supplier_name": "PT. SAPTA SARI TAMA",
+        "supplier_aliases": [
+            "SAPTA SARI TAMA",
+            "PT. SAPTA SARI",
+            "SST"
+        ],
+        "document_type": "Invoice",
+        "version": "1.0",
+        "fields_to_extract": [
+            "po_number",
+            "invoice_number",
+            "invoice_date"
+        ],
+        "po_number_info": {
+            "label": "Purchase Order Number",
+            "location_keywords": [
+                "No. Acu"
+            ],
+            "hint_text": "Terletak pada bagian atas faktur, sisi kanan, berada dibawah label 'No. Acu'",
+            "rules": [
+                "Hanya terletak pada bagian atas, sisi kanan berada di bawah label 'No. Acu'",
+                "Berada pada atas label 'Salesman'"
+            ],
+            "example_value": "PO-01-250101070 atau 01-250101070 atau 250101070"
+        },
+        "invoice_number_info": {
+            "label": "Invoice Number",
+            "location_keywords": [
+                "No. Faktur"
+            ],
+            "hint_text": "Terletak pada bagian atas faktur, dan di sisi tengah dengan label 'No. Faktur'",
+            "rules": [
+                "Hanya terletak pada bagian atas faktur, dan ada di sisi tengah dengan label 'No. Faktur'"
+            ],
+            "example_value": "1234567890"
+        },
+        "invoice_date_info": {
+            "label": "Invoice Date",
+            "location_keywords": [
+                "Tanggal"
+            ],
+            "date_format_hint": "DD MMMM YY",
+            "hint_text": "Terletak pada bagian atas faktur, sisi tengah dengan label 'Tanggal'",
+            "rules": [
+                "Hanya terletak pada bagian atas faktur, di sisi tengah dengan label 'Tanggal'",
+                "Berada dibawah Invoice Number"
+            ],
+            "example_value": "22 Januari 2025"
+        }
+    },
+    {
+        "id": "supplier_fokus_diagnostic_indonesia_v1",
+        "supplier_name": "PT. FOKUS DIAGNOSTIC INDONESIA",
+        "supplier_aliases": [
+            "FOKUS DIAGNOSTIC INDONESIA",
+            "PT. FOKUS DIAGNOSTIC",
+            "FOKUS DIAGNOSTIC",
+            "PT. FDI",
+            "FDI"
+        ],
+        "document_type": "Invoice",
+        "version": "1.0",
+        "fields_to_extract": [
+            "po_number",
+            "invoice_number",
+            "invoice_date"
+        ],
+        "po_number_info": {
+            "label": "Purchase Order Number",
+            "location_keywords": [
+                "PO. No"
+            ],
+            "hint_text": "Terletak pada bagian atas faktur, sisi kanan, berada disamping label 'PO. No'",
+            "rules": [
+                "Hanya terletak pada bagian atas, sisi kanan berada di samping label 'PO. No'",
+                "Bukan pada bagian label atau kolom 'Salesman'",
+                "Bukan pada bagian label atau kolom 'No. Faktur'"
+            ],
+            "example_value": "PO-01-250101070 atau 01-250101070 atau 250101070"
+        },
+        "invoice_number_info": {
+            "label": "Invoice Number",
+            "location_keywords": [
+                "No. Faktur"
+            ],
+            "hint_text": "Terletak pada bagian atas faktur, dan di sisi kanan dengan label 'No. Faktur'",
+            "rules": [
+                "Hanya terletak pada bagian atas faktur, dan ada di sisi kanan dengan label 'No. Faktur'",
+                "Berdekatan dengan PO Number"
+            ],
+            "example_value": "ABC/01/A/12345678"
+        },
+        "invoice_date_info": {
+            "label": "Invoice Date",
+            "location_keywords": [
+                "Tanggal"
+            ],
+            "date_format_hint": "DD-MM-YYYY",
+            "hint_text": "Terletak pada bagian atas faktur, sisi kanan dengan label 'Tanggal'",
+            "rules": [
+                "Hanya terletak pada bagian atas faktur, di sisi kanan dengan label 'Tanggal'",
+                "Berdekatan dengan PO Number",
+                "Berdekatan dengan Salesman"
+            ],
+            "example_value": "22-01-2025"
+        }
+    },
+    {
+        "id": "supplier_graha_imex_perdana_v1",
+        "supplier_name": "PT. GRAHA IMEX PERDANA",
+        "supplier_aliases": [
+            "GRAHA IMEX",
+            "PT. GRAHA IMEX",
+            "GIP"
+        ],
+        "document_type": "Invoice",
+        "version": "1.0",
+        "fields_to_extract": [
+            "po_number",
+            "invoice_number",
+            "invoice_date"
+        ],
+        "po_number_info": {
+            "label": "Purchase Order Number",
+            "location_keywords": [
+                "PO. No"
+            ],
+            "hint_text": "Terletak pada bagian atas faktur, sisi kiri, berada dibawah label 'PO. No'",
+            "rules": [
+                "Hanya terletak pada bagian atas, sisi kiri berada di bawah label 'PO. No'",
+                "Bukan pada bagian label atau kolom 'Invoice No'"
+            ],
+            "example_value": "PO-01-250101070 atau 01-250101070 atau 250101070"
+        },
+        "invoice_number_info": {
+            "label": "Invoice Number",
+            "location_keywords": [
+                "Invoice No"
+            ],
+            "hint_text": "Terletak pada bagian atas faktur, dan di sisi kiri dengan label 'Invoice No'",
+            "rules": [
+                "Hanya terletak pada bagian atas faktur, dan ada di sisi kiri dengan label 'Invoice No'",
+                "Berdekatan dengan PO Number"
+            ],
+            "example_value": "123456-ABCDE"
+        },
+        "invoice_date_info": {
+            "label": "Invoice Date",
+            "location_keywords": [
+                "Invoice Date"
+            ],
+            "date_format_hint": "DD/MM/YYYY",
+            "hint_text": "Terletak pada bagian atas faktur, sisi paling kiri dengan label 'Invoice Date'",
+            "rules": [
+                "Hanya terletak pada bagian atas faktur, di sisi paling kiri dengan label 'Invoice Date'",
+                "Berdekatan dengan PO Number",
+                "Bukan pada bagian 'Terms'"
+            ],
+            "example_value": "22/01/2025"
+        }
+    },
+    {
+        "id": "supplier_indolab_artha_medika_v1",
+        "supplier_name": "PT. INDOLAB ARTHA MEDIKA",
+        "supplier_aliases": [
+            "INDOLAB",
+            "ARTHA MEDIKA",
+            "IAM"
+        ],
+        "document_type": "Invoice",
+        "version": "1.0",
+        "fields_to_extract": [
+            "po_number",
+            "invoice_number",
+            "invoice_date"
+        ],
+        "po_number_info": {
+            "label": "Purchase Order Number",
+            "location_keywords": [
+                "No. PO/SP"
+            ],
+            "hint_text": "Terletak pada bagian atas faktur, sisi kanan, berada di label 'No. PO/SP'",
+            "rules": [
+                "Hanya terletak pada bagian atas, sisi kanan berada di label 'No. PO/SP'",
+                "Bukan pada bagian label atau kolom 'Nomor Faktur Penjualan'"
+            ],
+            "example_value": "PO-01-250101070 atau 01-250101070 atau 250101070"
+        },
+        "invoice_number_info": {
+            "label": "Invoice Number",
+            "location_keywords": [
+                "Nomor Faktur Penjualan"
+            ],
+            "hint_text": "Terletak pada bagian atas faktur, dan di sisi kanan dengan label 'Nomor Faktur Penjualan'",
+            "rules": [
+                "Hanya terletak pada bagian atas faktur, dan ada di sisi kanan dengan label 'Nomor Faktur Penjualan'",
+                "Berdekatan dengan Tanggal Faktur"
+            ],
+            "example_value": "1234567890"
+        },
+        "invoice_date_info": {
+            "label": "Invoice Date",
+            "location_keywords": [
+                "Tanggal Faktur"
+            ],
+            "date_format_hint": "DD MMM YYYY",
+            "hint_text": "Terletak pada bagian atas faktur, sisi kanan dengan label 'Tanggal Faktur'",
+            "rules": [
+                "Hanya terletak pada bagian atas faktur, di sisi kanan dengan label 'Tanggal Faktur'",
+                "Berdekatan dengan Nomor Faktur Penjualan",
+                "Bukan pada bagian 'Tanggal Jatuh Tempo'"
+            ],
+            "example_value": "22 Jan 2025"
+        }
+    },
+    {
+        "id": "supplier_fokus_sahabat_sehat_v1",
+        "supplier_name": "PT. FOKUS SAHABAT SEHAT",
+        "supplier_aliases": [
+            "FOKUS SAHABAT",
+            "SAHABAT SEHAT",
+            "FSS"
+        ],
+        "document_type": "Invoice",
+        "version": "1.0",
+        "fields_to_extract": [
+            "po_number",
+            "invoice_number",
+            "invoice_date"
+        ],
+        "po_number_info": {
+            "label": "Purchase Order Number",
+            "location_keywords": [
+                "No. PO"
+            ],
+            "hint_text": "Terletak pada bagian atas faktur, sisi kanan, berada di label 'No. PO'",
+            "rules": [
+                "Hanya terletak pada bagian atas, sisi kanan berada di label 'No. PO'",
+                "Bukan pada bagian label atau kolom 'No. Invoice'",
+                "Berdekatan dengan label Tanggal"
+            ],
+            "example_value": "PO-01-250101070 atau 01-250101070 atau 250101070"
+        },
+        "invoice_number_info": {
+            "label": "Invoice Number",
+            "location_keywords": [
+                "No. Invoice"
+            ],
+            "hint_text": "Terletak pada bagian atas faktur, dan di sisi kanan dengan label 'No. Invoice'",
+            "rules": [
+                "Hanya terletak pada bagian atas faktur, dan ada di sisi kanan dengan label 'No. Invoice'",
+                "Berdekatan dengan label Tanggal"
+            ],
+            "example_value": "1234-AB-ABC-A-1234"
+        },
+        "invoice_date_info": {
+            "label": "Invoice Date",
+            "location_keywords": [
+                "TANGGAL"
+            ],
+            "date_format_hint": "DD MMM YYYY",
+            "hint_text": "Terletak pada bagian atas faktur, sisi kanan dengan label 'TANGGAL'",
+            "rules": [
+                "Hanya terletak pada bagian atas faktur, di sisi kanan dengan label 'TANGGAL'",
+                "Berdekatan dengan No. Invoice",
+                "Bukan pada bagian 'NO. PO'"
+            ],
+            "example_value": "22 Jan 2025"
+        }
+    },
+    {
+        "id": "supplier_intergastra_nusantara_v1",
+        "supplier_name": "PT. INTERGASTRA NUSANTARA",
+        "supplier_aliases": [
+            "INTEGASTRA",
+            "PT. IN"
+        ],
+        "document_type": "Invoice",
+        "version": "1.0",
+        "fields_to_extract": [
+            "po_number",
+            "invoice_number",
+            "invoice_date"
+        ],
+        "po_number_info": {
+            "label": "Purchase Order Number",
+            "location_keywords": [
+                "No. PO"
+            ],
+            "hint_text": "Terletak pada bagian atas faktur, sisi kiri, berada di label 'No. PO'",
+            "rules": [
+                "Hanya terletak pada bagian atas, sisi kiri berada di label 'No. PO'",
+                "Bukan pada bagian label atau kolom 'No. DO'",
+                "Berdekatan dengan label 'Pengirim'"
+            ],
+            "example_value": "PO-01-250101070 atau 01-250101070 atau 250101070 atau PO-01-250101070-1"
+        },
+        "invoice_number_info": {
+            "label": "Invoice Number",
+            "location_keywords": [
+                "No. DO"
+            ],
+            "hint_text": "Terletak pada bagian atas faktur, dan di sisi kiri dengan label 'No. DO'",
+            "rules": [
+                "Hanya terletak pada bagian atas faktur, dan ada di sisi kiri dengan label 'No. DO'",
+                "Berdekatan dengan label Tgl, dan No. PO"
+            ],
+            "example_value": "AB/12/ABC/1234"
+        },
+        "invoice_date_info": {
+            "label": "Invoice Date",
+            "location_keywords": [
+                "Tgl"
+            ],
+            "date_format_hint": "DD MMM YYYY",
+            "hint_text": "Terletak pada bagian atas faktur, sisi kiri dengan label 'Tgl'",
+            "rules": [
+                "Hanya terletak pada bagian atas faktur, di sisi kiri dengan label 'Tgl'",
+                "Berdekatan dengan No. DO"
+            ],
+            "example_value": "22 Jan 2025"
+        }
+    },
+    {
+        "id": "supplier_cobra_dental_indonesia_v1",
+        "supplier_name": "PT. COBRA DENTAL INDONESIA",
+        "supplier_aliases": [
+            "COBRA DENTAL INDONESIA",
+            "PT. COBRA DENTAL",
+            "COBRA",
+            "CDI"
+        ],
+        "document_type": "Invoice",
+        "version": "1.0",
+        "fields_to_extract": [
+            "po_number",
+            "invoice_number",
+            "invoice_date"
+        ],
+        "po_number_info": {
+            "label": "Purchase Order Number",
+            "location_keywords": [
+                "Tidak ada PO Number"
+            ],
+            "hint_text": "Tidak ada PO Number pada faktur ini, tidak perlu dicari",
+            "rules": [
+                "Tidak ada PO Number pada faktur ini, tidak perlu dicari, isikan null pada PO Number"
+            ],
+            "example_value": "null"
+        },
+        "invoice_number_info": {
+            "label": "Invoice Number",
+            "location_keywords": [
+                "No. Nota"
+            ],
+            "hint_text": "Terletak pada bagian paling atas faktur, dan di sisi kanan dengan label 'No. Nota'",
+            "rules": [
+                "Hanya terletak pada bagian paling atas faktur, dan ada di sisi kanan dengan label 'No. Nota'",
+                "Berdekatan dengan label Tanggal, dan J. Tempo"
+            ],
+            "example_value": "C001.12345678.ABC"
+        },
+        "invoice_date_info": {
+            "label": "Invoice Date",
+            "location_keywords": [
+                "Tanggal"
+            ],
+            "date_format_hint": "DD-MM-YYYY",
+            "hint_text": "Terletak pada bagian paling atas faktur, sisi kanan dengan label 'Tanggal'",
+            "rules": [
+                "Hanya terletak pada bagian paling atas faktur, di sisi kanan dengan label 'Tanggal'",
+                "Bukan yang terletak pada label J. Tempo",
+                "Berdekatan dengan 'NOTA KREDIT'"
+            ],
+            "example_value": "22-01-2025"
+        }
+    },
+    {
+        "id": "supplier_pyridam_farma_tbk_v1",
+        "supplier_name": "PT. PYRIDAM FARMA TBK",
+        "supplier_aliases": [
+            "PYRIDAM FARMA TBK",
+            "PT. PYRIDAM",
+            "PF"
+        ],
+        "document_type": "Invoice",
+        "version": "1.0",
+        "fields_to_extract": [
+            "po_number",
+            "invoice_number",
+            "invoice_date"
+        ],
+        "po_number_info": {
+            "label": "Purchase Order Number",
+            "location_keywords": [
+                "Terletak pada bagian tengah faktur, di sisi kanan dengan label 'No. PO'"
+            ],
+            "hint_text": "Terletak pada bagain tengah faktur, di sisi kanan dengan label 'No. PO'",
+            "rules": [
+                "Hanya terletak pada bagian tengah, sisi kanan faktur berada di bawah label 'No. PO'",
+                "Bukan yang terletak pada label 'No. SPB'",
+                "Bukan yang terletak pada label 'No. Invoice'"
+            ],
+            "example_value": "'PO-01-250101070' atau 'PO-01-250101070-1' atau '01-250101070' atau '250101070'"
+        },
+        "invoice_number_info": {
+            "label": "Invoice Number",
+            "location_keywords": [
+                "No. Invoice"
+            ],
+            "hint_text": "Terletak pada bagian tengah faktur, dan di sisi kanan dengan label 'No. Invoice'",
+            "rules": [
+                "Hanya terletak pada bagian tengah faktur, dan ada di sisi kanan dengan label 'No. Invoice'",
+                "Bukan yang terletak pada label 'No. SPB'",
+                "Berdekatan dengan label 'Jatuh Tempo'"
+            ],
+            "example_value": "1234567890"
+        },
+        "invoice_date_info": {
+            "label": "Invoice Date",
+            "location_keywords": [
+                "Tanggal"
+            ],
+            "date_format_hint": "DD/MM/YYYY",
+            "hint_text": "Terletak pada bagian paling atas faktur, sisi kanan dengan label 'Tanggal'",
+            "rules": [
+                "Hanya terletak pada bagian paling atas faktur, di sisi kanan dengan label 'Tanggal'",
+                "Bukan yang terletak pada label J. Tempo"
+            ],
+            "example_value": "22/01/2025"
+        }
+    },
+    {
+        "id": "supplier_guna_abdi_wisesa_v1",
+        "supplier_name": "PT. GUNA ABDI WISESA",
+        "supplier_aliases": [
+            "GUNA ABDI WISESA",
+            "PT. GUNA ABDI",
+            "GAW"
+        ],
+        "document_type": "Invoice",
+        "version": "1.0",
+        "fields_to_extract": [
+            "po_number",
+            "invoice_number",
+            "invoice_date"
+        ],
+        "po_number_info": {
+            "label": "Purchase Order Number",
+            "location_keywords": [
+                "Tidak ada PO Number"
+            ],
+            "hint_text": "Tidak ada PO Number pada faktur ini, tidak perlu dicari",
+            "rules": [
+                "Tidak ada PO Number pada faktur ini, tidak perlu dicari, isikan null pada PO Number"
+            ],
+            "example_value": "null"
+        },
+        "invoice_number_info": {
+            "label": "Invoice Number",
+            "location_keywords": [
+                "Tanpa Label"
+            ],
+            "hint_text": "Terletak pada bagian atas faktur, dan di sisi paling kanan tanpa label, berada di atas label 'Keterangan'",
+            "rules": [
+                "Hanya terletak pada bagian atas faktur, dan ada di sisi paling kanan tanpa label",
+                "Bukan yang terletak pada label 'No. Faktur'",
+                "Bukan yang terletak pada label 'Customer'",
+                "Berdekatan dengan label 'Keterangan'"
+            ],
+            "example_value": "123-12.12345678"
+        },
+        "invoice_date_info": {
+            "label": "Invoice Date",
+            "location_keywords": [
+                "Tanggal"
+            ],
+            "date_format_hint": "DD/MM/YYYY",
+            "hint_text": "Terletak pada bagian atas faktur, sisi tengah dengan label atau kolom 'Tanggal'",
+            "rules": [
+                "Hanya terletak pada bagian atas faktur, di sisi tengah dengan label atau kolom 'Tanggal'",
+                "Bukan yang terletak pada label Keterangan"
+            ],
+            "example_value": "22/01/2025"
+        }
+    },
+    {
+        "id": "supplier_sinalsal_anugerah_indonesia_v1",
+        "supplier_name": "PT. SINALSAL ANUGERAH INDONESIA",
+        "supplier_aliases": [
+            "SINALSAL ANUGERAH INDONESIA",
+            "ANUGERAH INDONESIA",
+            "SAI"
+        ],
+        "document_type": "Invoice",
+        "version": "1.0",
+        "fields_to_extract": [
+            "po_number",
+            "invoice_number",
+            "invoice_date"
+        ],
+        "po_number_info": {
+            "label": "Purchase Order Number",
+            "location_keywords": [
+                "Nomor PO"
+            ],
+            "hint_text": "Terletak pada bagian atas faktur, sisi kanan, berada di label 'Nomor PO'",
+            "rules": [
+                "Berada di bagian atas, sisi kanan faktur berada di label 'Nomor PO'",
+                "Bukan pada bagian label atau kolom 'Nomor'"
+            ],
+            "example_value": "PO-01-250101070 atau 01-250101070 atau 250101070 atau 'PO-01-250101070 | PO-01-250101070-1'"
+        },
+        "invoice_number_info": {
+            "label": "Invoice Number",
+            "location_keywords": [
+                "Nomor"
+            ],
+            "hint_text": "Terletak pada bagian atas faktur, dan di sisi kiri pada label Nomor",
+            "rules": [
+                "Hanya terletak pada bagian atas faktur, dan ada di sisi kiri pada label Nomor",
+                "Bukan yang terletak pada label 'Nomor PO'",
+                "Berdekatan dengan label 'FAKTUR'"
+            ],
+            "example_value": "12345678/ABCD/ABCD/A/1234"
+        },
+        "invoice_date_info": {
+            "label": "Invoice Date",
+            "location_keywords": [
+                "Tanggal"
+            ],
+            "date_format_hint": "DD MMM YYYY",
+            "hint_text": "Terletak pada bagian atas faktur, sisi kiri dengan label atau kolom 'Tanggal'",
+            "rules": [
+                "Hanya terletak pada bagian atas faktur, di sisi kiri dengan label atau kolom 'Tanggal'",
+                "Berdekatan dengan label 'Nomor'"
+            ],
+            "example_value": "22 Jan 2025"
+        }
+    },
+    {
+        "id": "supplier_demaz_noer_abadi_v1",
+        "supplier_name": "PT. DEMAZ NOER ABADI",
+        "supplier_aliases": [
+            "DEMAZ NOER ABADI",
+            "PT. DEMAZ",
+            "DNA"
+        ],
+        "document_type": "Invoice",
+        "version": "1.0",
+        "fields_to_extract": [
+            "po_number",
+            "invoice_number",
+            "invoice_date"
+        ],
+        "po_number_info": {
+            "label": "Purchase Order Number",
+            "location_keywords": [
+                "PO. NO."
+            ],
+            "hint_text": "Terletak pada bagian atas faktur, sisi kanan, berada di label 'PO. NO.'",
+            "rules": [
+                "Berada di bagian atas, sisi kanan faktur berada di label 'PO. NO.'",
+                "Bukan pada bagian label atau kolom 'Delivery No.'"
+            ],
+            "example_value": "PO-01-250101070 atau 01-250101070 atau 250101070 atau 'PO-01-250101070 | PO-01-250101070-1'"
+        },
+        "invoice_number_info": {
+            "label": "Invoice Number",
+            "location_keywords": [
+                "Delivery No."
+            ],
+            "hint_text": "Terletak pada bagian atas faktur, dan di sisi kanan pada label Delivery No.",
+            "rules": [
+                "Hanya terletak pada bagian atas faktur, dan ada di sisi kanan pada label Delivery No.",
+                "Bukan yang terletak pada label 'PO. NO.'",
+                "Berdekatan dengan label 'PO. NO.'"
+            ],
+            "example_value": "AB/ABC/1234/1234"
+        },
+        "invoice_date_info": {
+            "label": "Invoice Date",
+            "location_keywords": [
+                "Delivery Date"
+            ],
+            "date_format_hint": "DD MMM YYYY",
+            "hint_text": "Terletak pada bagian atas faktur, sisi kanan dengan label atau kolom 'Delivery Date'",
+            "rules": [
+                "Hanya terletak pada bagian atas faktur, di sisi kanan dengan label atau kolom 'Delivery Date'",
+                "Berdekatan dengan label 'Delivery No.'",
+                "Berdekatan dengan label 'Salesman'"
+            ],
+            "example_value": "22 Jan 2025"
+        }
+    },
+    {
+        "id": "supplier_elo_karsa_utama_v1",
+        "supplier_name": "PT. ELO KARSA UTAMA",
+        "supplier_aliases": [
+            "ELO KARSA UTAMA",
+            "PT. ELO",
+            "EKU"
+        ],
+        "document_type": "Invoice",
+        "version": "1.0",
+        "fields_to_extract": [
+            "po_number",
+            "invoice_number",
+            "invoice_date"
+        ],
+        "po_number_info": {
+            "label": "Purchase Order Number",
+            "location_keywords": [
+                "Your PO No."
+            ],
+            "hint_text": "Terletak pada bagian atas faktur, sisi kanan, berada di label 'Your PO No.'",
+            "rules": [
+                "Berada di bagian atas, sisi kanan faktur berada di label 'Your PO No.'"
+            ],
+            "example_value": "PO-01-250101070 atau 01-250101070 atau 250101070 atau 'PO-01-250101070 | PO-01-250101070-1'"
+        },
+        "invoice_number_info": {
+            "label": "Invoice Number",
+            "location_keywords": [
+                "Invoice No."
+            ],
+            "hint_text": "Terletak pada bagian paling atas faktur, dan di sisi kanan pada label Invoice No.",
+            "rules": [
+                "Hanya terletak pada bagian paling atas faktur, dan ada di sisi kanan pada label Invoice No.",
+                "Berdekatan dengan barcode faktur'"
+            ],
+            "example_value": "12345678"
+        },
+        "invoice_date_info": {
+            "label": "Invoice Date",
+            "location_keywords": [
+                "tgl"
+            ],
+            "date_format_hint": "DD MMM YYYY",
+            "hint_text": "Terletak pada bagian bawah faktur, sisi kiri dengan label atau kolom 'tgl'",
+            "rules": [
+                "Hanya terletak pada bagian bawah faktur, di sisi kiri dengan label atau kolom 'tgl'",
+                "Berdekatan dengan field Total Harga'"
+            ],
+            "example_value": "22 Jan 2025"
+        }
+    },
+    {
+        "id": "supplier_abadinusa_usaha_semesta_v1",
+        "supplier_name": "PT. ABADINUSA USAHA SEMESTA",
+        "supplier_aliases": [
+            "ABADINUSA USAHA SEMESTA",
+            "PT. ABADINUSA",
+            "USAHASEMESTA",
+            "AUS"
+        ],
+        "document_type": "Invoice",
+        "version": "1.0",
+        "fields_to_extract": [
+            "po_number",
+            "invoice_number",
+            "invoice_date"
+        ],
+        "po_number_info": {
+            "label": "Purchase Order Number",
+            "location_keywords": [
+                "Your ref"
+            ],
+            "hint_text": "Terletak pada bagian tengah faktur, sisi kiri, berada di label 'Your ref'",
+            "rules": [
+                "Berada di bagian tengah, sisi kiri faktur berada di samping label 'Your ref'"
+            ],
+            "example_value": "PO-01-250101070 atau 01-250101070 atau 250101070 atau 'PO-01-250101070 | PO-01-250101070-1'"
+        },
+        "invoice_number_info": {
+            "label": "Invoice Number",
+            "location_keywords": [
+                "Our ref :"
+            ],
+            "hint_text": "Terletak pada bagian tengah faktur, dan di sisi tengah faktur pada label Our ref :",
+            "rules": [
+                "Hanya terletak pada bagian tengah faktur, dan ada di sisi tengah faktur pada label Our ref :",
+                "atau bisa diambil dari label 'DELIVERY ORDER NO :"
+            ],
+            "example_value": "DO-12345678"
+        },
+        "invoice_date_info": {
+            "label": "Invoice Date",
+            "location_keywords": [
+                "Date"
+            ],
+            "date_format_hint": "DD/MM/YYYY",
+            "hint_text": "Terletak pada bagian tengah faktur, sisi kanan dengan label atau kolom 'Date'",
+            "rules": [
+                "Hanya terletak pada bagian tengah faktur, di sisi kanan dengan label atau kolom 'Date'"
+            ],
+            "example_value": "22/01/2025"
+        }
+    },
+    {
+        "id": "supplier_sentra_asia_gemilang_v1",
+        "supplier_name": "PT. SENTRA ASIA GEMILANG",
+        "supplier_aliases": [
+            "SENTRA ASIA GEMILANG",
+            "PT. SENTRA ASIA",
+            "SAG"
+        ],
+        "document_type": "Invoice",
+        "version": "1.0",
+        "fields_to_extract": [
+            "po_number",
+            "invoice_number",
+            "invoice_date"
+        ],
+        "po_number_info": {
+            "label": "Purchase Order Number",
+            "location_keywords": [
+                "P.O No :"
+            ],
+            "hint_text": "Terletak pada bagian tengah faktur, sisi kanan, berada di label 'P.O No :'",
+            "rules": [
+                "Berada di bagian tengah, sisi kanan faktur berada di samping label 'P.O No :'"
+            ],
+            "example_value": "PO-01-250101070 atau 01-250101070 atau 250101070 atau 'PO-01-250101070 | PO-01-250101070-1'"
+        },
+        "invoice_number_info": {
+            "label": "Invoice Number",
+            "location_keywords": [
+                "No"
+            ],
+            "hint_text": "Terletak pada bagian atas faktur, dan di sisi tengah faktur pada label 'No'",
+            "rules": [
+                "Hanya terletak pada bagian atas faktur, dan ada di sisi tengah faktur pada label 'No'",
+                "Berdekatan dengan label 'Tgl' dan 'FAKTUR'"
+            ],
+            "example_value": "A/12/123456"
+        },
+        "invoice_date_info": {
+            "label": "Invoice Date",
+            "location_keywords": [
+                "Tgl"
+            ],
+            "date_format_hint": "DD-MM-YYYY",
+            "hint_text": "Terletak pada bagian atas faktur, sisi tengah dengan label atau kolom 'Tgl'",
+            "rules": [
+                "Hanya terletak pada bagian atas faktur, di sisi tengah dengan label atau kolom 'Tgl'",
+                "Bukan pada bagian kolom atau label 'Jatuh Tempo'",
+                "Berdekatan dengan label 'No'"
+            ],
+            "example_value": "22-01-2025"
+        }
+    },
+    {
+        "id": "supplier_lumary_birumas_v1",
+        "supplier_name": "PT. LUMARY BIRUMAS",
+        "supplier_aliases": [
+            "LUMARY BIRUMAS",
+            "BIRUMAS",
+            "PT. LB"
+        ],
+        "document_type": "Invoice",
+        "version": "1.0",
+        "fields_to_extract": [
+            "po_number",
+            "invoice_number",
+            "invoice_date"
+        ],
+        "po_number_info": {
+            "label": "Purchase Order Number",
+            "location_keywords": [
+                "Nomor Pesanan"
+            ],
+            "hint_text": "Terletak pada bagian atas faktur, sisi kiri, berada di label 'Nomor Pesanan'",
+            "rules": [
+                "Berada di bagian atas, sisi kiri faktur berada di samping label 'Nomor Pesanan'",
+                "Bukan pada bagian 'Nomor Penjualan'"
+            ],
+            "example_value": "PO-01-250101070 atau 01-250101070 atau 250101070 atau 'PO-01-250101070 | PO-01-250101070-1'"
+        },
+        "invoice_number_info": {
+            "label": "Invoice Number",
+            "location_keywords": [
+                "Nomor Penjualan"
+            ],
+            "hint_text": "Terletak pada bagian atas faktur, dan di sisi kiri faktur pada label 'Nomor Penjualan'",
+            "rules": [
+                "Hanya terletak pada bagian atas faktur, dan ada di sisi kiri faktur pada label 'Nomor Penjualan'",
+                "Berdekatan dengan label 'Nomor Pesanan'",
+                "Bukan pada bagian label 'Nomor Pesanan'"
+            ],
+            "example_value": "12345/12-12/ABCD/1234"
+        },
+        "invoice_date_info": {
+            "label": "Invoice Date",
+            "location_keywords": [
+                "Today date"
+            ],
+            "date_format_hint": "DD MMM YYYY",
+            "hint_text": "Terletak pada bagian atas faktur, sisi kiri dengan label atau kolom 'Today date'",
+            "rules": [
+                "Hanya terletak pada bagian atas faktur, di sisi kiri dengan label atau kolom 'Today Date'",
+                "Berdekatan dengan email supplier company"
+            ],
+            "example_value": "22 Jan 2025"
+        }
+    },
+    {
+        "id": "supplier_tawada_healthcare_v1",
+        "supplier_name": "PT. TAWADA HEALTHCARE",
+        "supplier_aliases": [
+            "TAWADA HEALTHCARE",
+            "THC"
+        ],
+        "document_type": "Invoice",
+        "version": "1.0",
+        "fields_to_extract": [
+            "po_number",
+            "invoice_number",
+            "invoice_date"
+        ],
+        "po_number_info": {
+            "label": "Purchase Order Number",
+            "location_keywords": [
+                "No PO Langganan"
+            ],
+            "hint_text": "Terletak pada bagian atas faktur, sisi kiri, berada di label 'No PO Langganan'",
+            "rules": [
+                "Berada di bagian atas, sisi kiri faktur berada di samping label 'No PO Langganan'",
+                "Bukan pada bagian 'No Faktur'"
+            ],
+            "example_value": "PO-01-250101070 atau 01-250101070 atau 250101070 atau 'PO-01-250101070 | PO-01-250101070-1'"
+        },
+        "invoice_number_info": {
+            "label": "Invoice Number",
+            "location_keywords": [
+                "No Faktur"
+            ],
+            "hint_text": "Terletak pada bagian atas faktur, dan di sisi kiri faktur pada label 'No Faktur'",
+            "rules": [
+                "Hanya terletak pada bagian atas faktur, dan ada di sisi kiri faktur pada label 'No Faktur'",
+                "Berdekatan dengan label 'No PO Langganan'",
+                "Bukan pada bagian label 'No PO Langganan'"
+            ],
+            "example_value": "12345678"
+        },
+        "invoice_date_info": {
+            "label": "Invoice Date",
+            "location_keywords": [
+                "Tanggal"
+            ],
+            "date_format_hint": "DD MMM YYYY",
+            "hint_text": "Terletak pada bagian atas faktur, sisi kiri dengan label atau kolom 'Tanggal'",
+            "rules": [
+                "Hanya terletak pada bagian atas faktur, di sisi kiri dengan label atau kolom 'Tanggal'",
+                "Berdekatan dengan label 'No Faktur'",
+                "Bukan pada bagian label 'Jatuh Tempo'"
+            ],
+            "example_value": "22 Jan 2025"
+        }
+    },
+    {
+        "id": "supplier_meditech_indonesia_v1",
+        "supplier_name": "PT. MEDITECH INDONESIA",
+        "supplier_aliases": [
+            "MEDITECH INDONESIA",
+            "MEDITECH"
+        ],
+        "document_type": "Invoice",
+        "version": "1.0",
+        "fields_to_extract": [
+            "po_number",
+            "invoice_number",
+            "invoice_date"
+        ],
+        "po_number_info": {
+            "label": "Purchase Order Number",
+            "location_keywords": [
+                "PO No."
+            ],
+            "hint_text": "Terletak pada bagian tengah faktur, sisi kiri, ada di dalam tabel items, berada di label 'PO No.'",
+            "rules": [
+                "Berada di bagian tengah, sisi kiri faktur, ada di dalam tabel, berada di samping label 'PO No.'",
+                "Bukan pada bagian label 'No'"
+            ],
+            "example_value": "PO-01-250101070 atau 01-250101070 atau 250101070 atau 'PO-01-250101070 | PO-01-250101070-1'"
+        },
+        "invoice_number_info": {
+            "label": "Invoice Number",
+            "location_keywords": [
+                "No"
+            ],
+            "hint_text": "Terletak pada bagian paling atas faktur, dan di sisi paling kanan faktur pada label 'No'",
+            "rules": [
+                "Hanya terletak pada bagian paling atas faktur, dan ada di sisi paling kanan faktur pada label 'No'",
+                "Berdekatan dengan label 'INVOICE'"
+            ],
+            "example_value": "ABCD.EFGHI-12-12345"
+        },
+        "invoice_date_info": {
+            "label": "Invoice Date",
+            "location_keywords": [
+                "Date"
+            ],
+            "date_format_hint": "DD-MMM-YYYY",
+            "hint_text": "Terletak pada bagian tengah faktur, sisi kiri dan ada di atas tabel item, berada di label atau kolom 'Date'",
+            "rules": [
+                "Hanya terletak pada bagian tengah faktur, di sisi kiri dan ada di atas tabel item, berada di label atau kolom 'Date'"
+            ],
+            "example_value": "22-Jan-2025"
+        }
+    },
+    {
+        "id": "supplier_diastika_biotekindo_v1",
+        "supplier_name": "PT. DIASTIKA BIOTEKINDO",
+        "supplier_aliases": [
+            "DIASTIKA BIOTEKINDO",
+            "DIASTIKA",
+            "PT. DB"
+        ],
+        "document_type": "Invoice",
+        "version": "1.0",
+        "fields_to_extract": [
+            "po_number",
+            "invoice_number",
+            "invoice_date"
+        ],
+        "po_number_info": {
+            "label": "Purchase Order Number",
+            "location_keywords": [
+                "Tanpa Label"
+            ],
+            "hint_text": "Terletak pada bagian paling atas faktur, sisi kiri, ada di samping kiri label 'Invoice', dan Tanpa Label",
+            "rules": [
+                "Berada di bagian paling atas, sisi kiri faktur, berada di samping kiri label 'Invoice'",
+                "Bukan pada bagian label 'Nomor'",
+                "Jika tidak terlihat, atau tertutup oleh object, maka buat null valuenya"
+            ],
+            "example_value": "PO-01-250101070 atau 01-250101070 atau 250101070 atau 'PO-01-250101070 | PO-01-250101070-1' atau null"
+        },
+        "invoice_number_info": {
+            "label": "Invoice Number",
+            "location_keywords": [
+                "Nomor"
+            ],
+            "hint_text": "Terletak pada bagian paling atas faktur, dan di sisi paling kanan faktur pada label 'Nomor'",
+            "rules": [
+                "Hanya terletak pada bagian paling atas faktur, dan ada di sisi paling kanan faktur pada label 'Nomor'",
+                "Berdekatan dengan label 'INVOICE'",
+                "Bukan pada bagian label 'No. Surat Jalan'"
+            ],
+            "example_value": "SI-1234567890"
+        },
+        "invoice_date_info": {
+            "label": "Invoice Date",
+            "location_keywords": [
+                "Tgl. Surat Jalan"
+            ],
+            "date_format_hint": "DD MMM YYYY",
+            "hint_text": "Terletak pada bagian atas faktur, sisi kanan, berada di label atau kolom 'Tgl. Surat jalan'",
+            "rules": [
+                "Hanya terletak pada bagian atas faktur, di sisi kanan, berada di label atau kolom 'Tgl. Surat jalan'"
+            ],
+            "example_value": "22 Jan 2025"
+        }
+    },
+    {
+        "id": "supplier_akurat_intan_madya_v1",
+        "supplier_name": "PT. AKURAT INTAN MADYA",
+        "supplier_aliases": [
+            "AKURAT INTAN MADYA",
+            "AKURAT",
+            "INTAN MADYA",
+            "PT. AIM"
+        ],
+        "document_type": "Invoice",
+        "version": "1.0",
+        "fields_to_extract": [
+            "po_number",
+            "invoice_number",
+            "invoice_date"
+        ],
+        "po_number_info": {
+            "label": "Purchase Order Number",
+            "location_keywords": [
+                "No. P.O."
+            ],
+            "hint_text": "Terletak pada bagian atas faktur, sisi kanan, berada di samping label No. P.O.",
+            "rules": [
+                "Berada di bagian atas, sisi kanan faktur, berada di samping label 'No. P.O.'",
+                "Bukan pada bagian label 'No D.O.'",
+                "Bukan pada bagian label 'No SPB.'"
+            ],
+            "example_value": "PO-01-250101070 atau 01-250101070 atau 250101070 atau 'PO-01-250101070 | PO-01-250101070-1' atau 'PO-01-250101070 / PO-01-250101070-1' atau null"
+        },
+        "invoice_number_info": {
+            "label": "Invoice Number",
+            "location_keywords": [
+                "No. D.O"
+            ],
+            "hint_text": "Terletak pada bagian atas faktur, dan di sisi kanan faktur pada label 'No. D.O'",
+            "rules": [
+                "Hanya terletak pada bagian atas faktur, dan ada di sisi kanan faktur pada label 'No. D.O'",
+                "Berdekatan dengan label 'No. PO'",
+                "Bukan pada bagian label 'Faktur No'",
+                "Bukan pada bagian label 'Kode Sales'"
+            ],
+            "example_value": "DO1234567890"
+        },
+        "invoice_date_info": {
+            "label": "Invoice Date",
+            "location_keywords": [
+                "Tanggal"
+            ],
+            "date_format_hint": "DD MMM YYYY",
+            "hint_text": "Terletak pada bagian atas faktur, sisi kanan, berada di label atau kolom 'Tanggal'",
+            "rules": [
+                "Hanya terletak pada bagian atas faktur, di sisi kanan, berada di label atau kolom 'Tanggal'"
+            ],
+            "example_value": "22 Jan 2025"
+        }
+    },
+    {
+        "id": "supplier_karindo_alkestron_v1",
+        "supplier_name": "PT. KARINDO ALKESTRON",
+        "supplier_aliases": [
+            "KARINDO ALKESTRON",
+            "KARINDO",
+            "ALKESTRON"
+        ],
+        "document_type": "Invoice",
+        "version": "1.0",
+        "fields_to_extract": [
+            "po_number",
+            "invoice_number",
+            "invoice_date"
+        ],
+        "po_number_info": {
+            "label": "Purchase Order Number",
+            "location_keywords": [
+                "Tanpa Label"
+            ],
+            "hint_text": "Terletak pada bagian atas faktur, sisi tengah, berada di bawah kode barcode",
+            "rules": [
+                "Berada di bagian atas, sisi tengah faktur, berada di bawah kode barcode",
+                "Bukan pada bagian label 'Kode Langganan'"
+            ],
+            "example_value": "PO-01-250101070"
+        },
+        "invoice_number_info": {
+            "label": "Invoice Number",
+            "location_keywords": [
+                "Nomor Faktur"
+            ],
+            "hint_text": "Terletak pada bagian atas faktur, dan di sisi kanan faktur pada label 'Nomor Faktur'",
+            "rules": [
+                "Hanya terletak pada bagian atas faktur, dan ada di sisi kanan faktur pada label 'Nomor Faktur'",
+                "Berdekatan dengan label 'MATA UANG'",
+                "Bukan pada bagian label 'Kode Langganan'"
+            ],
+            "example_value": "1234567890"
+        },
+        "invoice_date_info": {
+            "label": "Invoice Date",
+            "location_keywords": [
+                "TANGGAL"
+            ],
+            "date_format_hint": "DD-MMM-YYYY",
+            "hint_text": "Terletak pada bagian atas faktur, sisi kanan, berada di label atau kolom 'TANGGAL'",
+            "rules": [
+                "Hanya terletak pada bagian atas faktur, di sisi kanan, berada di label atau kolom 'TANGGAL'",
+                "Berdekatan dengan label 'Salesman'",
+                "Berdekatan dengan label 'FAKTUR PENJUALAN / SURAT JALAN'"
+            ],
+            "example_value": "22-JUN-2025"
+        }
+    },
+    {
+        "id": "supplier_madesa_sejahtera_utama_v1",
+        "supplier_name": "PT. MADESA SEJAHTERA UTAMA",
+        "supplier_aliases": [
+            "MADESA SEJAHTERA UTAMA",
+            "MADESA"
+        ],
+        "document_type": "Invoice",
+        "version": "1.0",
+        "fields_to_extract": [
+            "po_number",
+            "invoice_number",
+            "invoice_date"
+        ],
+        "po_number_info": {
+            "label": "Purchase Order Number",
+            "location_keywords": [
+                "Tanpa Label"
+            ],
+            "hint_text": "Terletak pada bagian atas faktur, sisi kiri, berada di atas label 'FAKTUR NO. :'",
+            "rules": [
+                "Berada di bagian atas, sisi kiri faktur, berada di atas label 'FAKTUR NO. :'"
+            ],
+            "example_value": "PO-01-250101070"
+        },
+        "invoice_number_info": {
+            "label": "Invoice Number",
+            "location_keywords": [
+                "FAKTUR NO. :"
+            ],
+            "hint_text": "Terletak pada bagian atas faktur, dan di sisi kiri faktur pada label 'FAKTUR NO. :'",
+            "rules": [
+                "Hanya terletak pada bagian atas faktur, dan ada di sisi kiri faktur pada label 'FAKTUR NO. :'"
+            ],
+            "example_value": "12345/A/12/12"
+        },
+        "invoice_date_info": {
+            "label": "Invoice Date",
+            "location_keywords": [
+                "Tanpa Label"
+            ],
+            "date_format_hint": "DD MMM YYYY",
+            "hint_text": "Terletak pada bagian atas faktur, sisi kanan, berada di label 'Kepada Yth.'",
+            "rules": [
+                "Hanya terletak pada bagian atas faktur, di sisi kanan, berada di label 'Kepada Yth.'",
+                "Berdekatan dengan label 'Kepada Yth'"
+            ],
+            "example_value": "22 JUN 2025"
+        }
+    },
+    {
+        "id": "supplier_toko_obat_raras_v1",
+        "supplier_name": "TOKO OBAT RARAS",
+        "supplier_aliases": [
+            "TOKO OBAT RARAS",
+            "RARAS"
+        ],
+        "document_type": "Invoice",
+        "version": "1.0",
+        "fields_to_extract": [
+            "po_number",
+            "invoice_number",
+            "invoice_date"
+        ],
+        "po_number_info": {
+            "label": "Purchase Order Number",
+            "location_keywords": [
+                "No. PO"
+            ],
+            "hint_text": "Terletak pada bagian atas faktur, sisi tengah, berada di samping label 'No. PO :'",
+            "rules": [
+                "Berada di bagian atas, sisi tengah faktur, berada di samping label 'No. PO :'"
+            ],
+            "example_value": "'PO-01-250101070' atau '250101070'"
+        },
+        "invoice_number_info": {
+            "label": "Invoice Number",
+            "location_keywords": [
+                "No. Faktur"
+            ],
+            "hint_text": "Terletak pada bagian atas faktur, dan di sisi tengah faktur pada label 'No. Faktur'",
+            "rules": [
+                "Hanya terletak pada bagian atas faktur, dan ada di sisi tengah faktur pada label 'No. Faktur'",
+                "Berdekatan dengan label 'Tanggal'"
+            ],
+            "example_value": "12345"
+        },
+        "invoice_date_info": {
+            "label": "Invoice Date",
+            "location_keywords": [
+                "Tanggal"
+            ],
+            "date_format_hint": "DD MMMM YYYY",
+            "hint_text": "Terletak pada bagian atas faktur, sisi tengah, berada di label 'Tanggal'",
+            "rules": [
+                "Hanya terletak pada bagian atas faktur, di sisi tengah, berada di label 'Tanggal'",
+                "Berdekatan dengan label 'No. Faktur'",
+                "Berdekatan dengan label 'No. PO'"
+            ],
+            "example_value": "22 Juni 2025"
+        }
+    }
+]

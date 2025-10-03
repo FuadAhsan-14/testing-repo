@@ -1,0 +1,5 @@
+{
+  "run_order": [
+    "llm_pricing_postgres_seeder.py"
+  ]
+}
